@@ -38,8 +38,7 @@ public class RedisListTest extends BaseTest {
 
     @Test
     public void range() {
-        List range = ops.range(key, 0, -1);
-        range.stream().forEach(value -> System.out.println(value));
+        System.out.println(Arrays.toString(ops.range(key, 0, -1).toArray()));
     }
 
     @Test
@@ -53,6 +52,14 @@ public class RedisListTest extends BaseTest {
     public void leftPop() {
         ops.leftPop(key);
     }
+
+    @Test
+    public void remove() {
+        System.out.println(Arrays.toString(ops.range(key, 0, -1).toArray()));
+        ops.remove(key, 1, "王五");
+        System.out.println(Arrays.toString(ops.range(key, 0, -1).toArray()));
+    }
+
 
 }
 
