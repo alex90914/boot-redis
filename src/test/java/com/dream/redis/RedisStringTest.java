@@ -20,7 +20,6 @@ public class RedisStringTest extends BaseTest {
         ops.set("name", "张三");
     }
 
-
     @Test
     public void multiSet() {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
@@ -31,7 +30,6 @@ public class RedisStringTest extends BaseTest {
         map.put("sex", "男");
         ops.multiSet(map);
     }
-
 
     @Test
     public void setExpire() {
